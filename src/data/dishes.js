@@ -12,21 +12,21 @@ const DISHES = [
                 id: 0,
                 rating: 5,
                 comment: "Emagin allthe eatables, living in conFusin!",
-                author: "Santo",
-                date: "2023-03-20T17:57:28.556094Z"
+                author: "Marufur Rahman",
+                date: "2023-01-20T17:57:28.556094Z"
             },
             {
                 id: 1,
                 rating: 4,
                 comment: "Emagin allthe eatables, living in conFusin!",
-                author: "Antar",
-                date: "2023-03-20T17:57:28.556094Z"
+                author: "Antar Majumder",
+                date: "2023-02-20T17:57:28.556094Z"
             },
             {
                 id: 2,
                 rating: 3,
                 comment: "Emagin allthe eatables, living in conFusin!",
-                author: "Raktim",
+                author: "Raktim Majumder",
                 date: "2023-03-20T17:57:28.556094Z"
             },
 
