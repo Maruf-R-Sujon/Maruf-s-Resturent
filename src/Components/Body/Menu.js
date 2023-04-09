@@ -3,18 +3,33 @@ import { Component } from "react";
 import DISHES from "../../data/dishes"
 import MenuItem from "./MenuItem";
 import DishDetails from "./dishDetails";
+import { Modal, ModalBody, ModalFooter, Button } from "reactstrap";
+
 
 class Menu extends Component {
     state = {
         dishes: DISHES,
-        selecteDish: null
+        selecteDish: null,
+        isModalOpen: false
     };
     onSelectDish = dish => {
         // console.log(dish)
         this.setState({
             selecteDish: dish
         });
+        this.ModalToggle();
     }
+    ModalToggle = () => {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen,
+        })
+    }
+    closeModal = () => {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen,
+        })
+    }
+
 
     render() {
         let menu = this.state.dishes.map(item => {
@@ -23,6 +38,7 @@ class Menu extends Component {
                     key={item.id}
                     dish={item}
                     selecteDish={() => this.onSelectDish(item)}
+                    ModalTog={this.ModalToggle}
                 />
             )
         });
@@ -33,12 +49,21 @@ class Menu extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-6" >
+                    {/* <div className="col-6" >
                         {menu}
                     </div>
                     <div className="col-6">
                         {dish}
-                    </div>
+                    </div> */}
+                    <Modal isOpen={this.state.isModalOpen} size="xl">
+                        <ModalBody>
+                            {dish}
+                        </ModalBody>
+                        <ModalFooter>
+                            <Button className="btn-danger" onClick={this.closeModal}>Close</Button>
+                        </ModalFooter>
+                    </Modal>
+                    {menu}
                 </div>
             </div>
         )

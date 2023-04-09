@@ -1,5 +1,5 @@
 import React from "react";
-import { CardTitle, CardText } from "reactstrap";
+import { CardTitle, CardText,Card } from "reactstrap";
 import dateFormat from "dateformat";
 
 let LoadComments = props => {
@@ -8,7 +8,7 @@ let LoadComments = props => {
             return (
                 <div key={item.id}>
                     <CardTitle tag='h4'>{item.author}</CardTitle>
-                    <card>{item.comment}</card>
+                    <Card>{item.comment}</Card>
                     <CardText>{dateFormat(item.date, 'dddd, mmmm dS,yyyy, h:MM TT')}</CardText>
                     <hr />
                 </div>
