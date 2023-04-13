@@ -4,6 +4,7 @@ import LoadComments from "./LoadComments";
 
 class DishDetails extends Component {
     constructor(props) {
+        console.log(props)
         super(props)
     }
     state = {
@@ -36,7 +37,7 @@ class DishDetails extends Component {
                             <button className="btn btn-success" onClick={this.openCmnt}>See Comments</button>
                             <Modal isOpen={this.state.openCmnt}>
                                 <ModalBody>
-                                <LoadComments comment={this.props.dish.comments} />
+                                <LoadComments comment={this.props.comment} />
                                 </ModalBody>
                                 <ModalFooter>
                                     <Button className="btn-danger" onClick={this.closeModal}>Close</Button>
